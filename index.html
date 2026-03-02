@@ -121,16 +121,16 @@
   .card-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 0.8em;
+    gap: 12px;
+    margin-top: 0.5em;
     width: 100%;
   }
 
   .card {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
-    padding: 18px;
+    border-radius: 14px;
+    padding: 14px;
     transition: transform 0.3s;
     min-width: 0;
     overflow: hidden;
@@ -140,22 +140,17 @@
     transform: translateY(-2px);
   }
 
-  .card .icon {
-    font-size: 1.8em;
-    margin-bottom: 0.3em;
-  }
-
   .card .card-title {
-    font-size: 0.75em;
+    font-size: 0.7em;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.2em;
   }
 
   .card .card-desc {
-    font-size: 0.55em;
+    font-size: 0.5em;
     color: #a0a0c0;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
   .timeline {
@@ -561,8 +556,8 @@
 
   .formula {
     text-align: center;
-    margin: 0.8em 0;
-    font-size: 1.1em;
+    margin: 0.5em 0;
+    font-size: 0.95em;
     font-weight: 700;
     color: #ffffff;
   }
@@ -677,7 +672,17 @@
 
   .card .icon {
     font-size: 1em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.3em;
+  }
+
+  .card .icon .ic {
+    width: 38px;
+    height: 38px;
+  }
+
+  .card .icon .ic svg {
+    width: 19px;
+    height: 19px;
   }
 
   .profile-item .pi-icon {
@@ -1005,11 +1010,23 @@
       font-size: 0.9em;
     }
 
-    /* Fragment visibility in scroll view */
-    .fragment {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: none !important;
+    .card .icon .ic {
+      width: 40px;
+      height: 40px;
+    }
+
+    .card .icon .ic svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .card .card-title {
+      font-size: 0.95em;
+    }
+
+    .card .card-desc {
+      font-size: 0.82em;
+      line-height: 1.6;
     }
   }
 </style>
@@ -1073,7 +1090,7 @@
 <!-- ========== Slide 3: あなたの武器 ========== -->
 <section>
   <h2><span class="ic sm red"><i data-lucide="swords"></i></span> あなたの武器</h2>
-  <h3>自分では気づいていない、すでに持っている強み</h3>
+  <h3 style="margin-bottom:0.4em;">自分では気づいていない、すでに持っている強み</h3>
 
   <div class="card-grid">
     <div class="card fragment">
@@ -1098,7 +1115,7 @@
     </div>
   </div>
 
-  <div class="formula fragment" style="margin-top: 1em;">
+  <div class="formula fragment" style="margin-top: 0.6em;">
     <span class="f-ai">AI力</span>
     <span class="f-op">×</span>
     <span class="f-sales">営業力</span>
@@ -1380,6 +1397,12 @@
 var vw = window.innerWidth;
 var vh = window.innerHeight;
 var isMobile = vw <= 768;
+
+if (isMobile) {
+  document.querySelectorAll('.fragment').forEach(function(el) {
+    el.classList.remove('fragment');
+  });
+}
 
 Reveal.initialize({
   hash: true,
