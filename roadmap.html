@@ -4,13 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>月10万円ロードマップ</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
 <script src="https://unpkg.com/lucide@latest"></script>
-<script>
-if (window.innerWidth > 768) {
-  document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">');
-  document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">');
-}
-</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
 
@@ -722,32 +718,68 @@ if (window.innerWidth > 768) {
 
   /* ===== Mobile: reveal.js完全無効化 → 通常スクロールページ ===== */
   body.is-mobile {
-    background: #0a0a1a;
-    overflow-y: auto;
+    background: #0a0a1a !important;
+    overflow: auto !important;
     -webkit-overflow-scrolling: touch;
+    height: auto !important;
   }
 
-  body.is-mobile .reveal,
-  body.is-mobile .slides {
-    all: unset;
-    display: block;
-    width: 100%;
+  body.is-mobile .reveal {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    transform: none !important;
+    min-height: 0 !important;
   }
 
-  body.is-mobile section {
-    display: block;
-    width: 100%;
-    padding: 32px 20px;
+  body.is-mobile .reveal .slides {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    max-width: 100% !important;
+    pointer-events: auto !important;
+  }
+
+  body.is-mobile .reveal .slides section {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    padding: 32px 20px !important;
     border-bottom: 1px solid rgba(255,255,255,0.06);
     font-family: 'Noto Sans JP', sans-serif;
     color: #e0e0e0;
     font-size: 16px;
   }
 
-  body.is-mobile .fragment {
+  body.is-mobile .reveal .slides section .fragment {
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
+  }
+
+  body.is-mobile .reveal .controls,
+  body.is-mobile .reveal .progress,
+  body.is-mobile .reveal .slide-number,
+  body.is-mobile .reveal .backgrounds {
+    display: none !important;
   }
 
   body.is-mobile h1 {
@@ -1245,6 +1277,7 @@ if (window.innerWidth > 768) {
 </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script>
 var isMobile = window.innerWidth <= 768;
 
@@ -1252,27 +1285,22 @@ if (isMobile) {
   document.body.classList.add('is-mobile');
   lucide.createIcons();
 } else {
-  var s = document.createElement('script');
-  s.src = 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js';
-  s.onload = function() {
-    Reveal.initialize({
-      hash: true,
-      slideNumber: true,
-      transition: 'slide',
-      transitionSpeed: 'default',
-      backgroundTransition: 'fade',
-      center: false,
-      width: 1100,
-      height: 700,
-      margin: 0.08,
-      minScale: 0.2,
-      maxScale: 2.0,
-      touch: true
-    }).then(function() {
-      lucide.createIcons();
-    });
-  };
-  document.body.appendChild(s);
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'slide',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+    center: false,
+    width: 1100,
+    height: 700,
+    margin: 0.08,
+    minScale: 0.2,
+    maxScale: 2.0,
+    touch: true
+  }).then(function() {
+    lucide.createIcons();
+  });
 }
 </script>
 </body>
