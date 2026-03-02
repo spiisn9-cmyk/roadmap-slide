@@ -711,306 +711,305 @@
     font-weight: 700;
   }
 
-  /* ===== Mobile Responsive (scroll view) ===== */
+  /* ===== Mobile Responsive ===== */
   @media screen and (max-width: 768px) {
     .reveal {
-      font-size: 18px;
+      font-size: 16px;
+    }
+
+    .reveal .slides {
+      width: 100% !important;
+      max-width: 100% !important;
     }
 
     .reveal .slides section {
-      padding: 24px 20px;
+      padding: 28px 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      min-height: auto !important;
     }
 
     .reveal h1 {
-      font-size: 1.8em;
+      font-size: 2em;
+      line-height: 1.3;
     }
 
     .reveal h2 {
-      font-size: 1.25em;
-      margin-bottom: 0.4em;
-    }
-
-    .reveal h3 {
-      font-size: 0.85em;
+      font-size: 1.4em;
       margin-bottom: 0.5em;
     }
 
+    .reveal h3 {
+      font-size: 1em;
+      margin-bottom: 0.6em;
+    }
+
+    .reveal p, .reveal li {
+      font-size: 0.9em;
+      line-height: 1.7;
+    }
+
+    .slide-title {
+      padding: 40px 0;
+    }
+
     .slide-title .subtitle {
-      font-size: 0.8em;
+      font-size: 0.95em;
     }
 
     .slide-title .name-tag {
-      margin-top: 1.2em;
-      font-size: 0.6em;
+      margin-top: 1.5em;
+      font-size: 0.75em;
     }
 
-    /* Grids → single column on mobile */
+    /* Grids → single column */
     .card-grid,
     .profile-grid,
     .two-col {
       grid-template-columns: 1fr;
-      gap: 10px;
+      gap: 12px;
     }
 
     .card {
-      padding: 14px;
+      padding: 16px;
+    }
+
+    .card .card-title {
+      font-size: 0.95em;
     }
 
     .card .card-desc {
-      font-size: 0.6em;
+      font-size: 0.8em;
     }
 
     .profile-item {
-      padding: 12px 14px;
-      gap: 10px;
+      padding: 14px 16px;
+      gap: 12px;
     }
 
-    .profile-item .pi-icon .ic {
-      width: 36px;
-      height: 36px;
-    }
-
-    .profile-item .pi-icon .ic svg {
-      width: 18px;
-      height: 18px;
+    .profile-item .pi-label {
+      font-size: 0.7em;
     }
 
     .profile-item .pi-value {
-      font-size: 0.62em;
+      font-size: 0.9em;
     }
 
     .goal-banner {
-      padding: 16px;
-      margin-top: 0.8em;
+      padding: 20px;
+      margin-top: 1em;
+    }
+
+    .goal-banner .goal-text {
+      font-size: 0.85em;
     }
 
     .goal-banner .goal-amount {
-      font-size: 1.3em;
+      font-size: 1.6em;
+    }
+
+    .goal-banner .goal-why {
+      font-size: 0.8em;
     }
 
     /* Timeline */
+    .timeline {
+      margin-top: 0.8em;
+    }
+
     .timeline-item {
-      padding-left: 40px;
-      margin-bottom: 0.7em;
-    }
-
-    .timeline::before {
-      left: 14px;
-    }
-
-    .timeline-item::before {
-      left: 6px;
-      width: 16px;
-      height: 16px;
+      padding-left: 44px;
+      margin-bottom: 1em;
     }
 
     .timeline-item .tl-label {
-      font-size: 0.5em;
+      font-size: 0.7em;
     }
 
     .timeline-item .tl-title {
-      font-size: 0.65em;
+      font-size: 0.95em;
     }
 
     .timeline-item .tl-amount {
-      font-size: 0.55em;
+      font-size: 0.8em;
     }
 
     /* Phase header */
     .phase-header {
-      font-size: 0.48em;
-      padding: 5px 14px;
+      font-size: 0.7em;
+      padding: 6px 16px;
       margin-bottom: 0.5em;
     }
 
     /* Step list */
     .step-list li {
-      padding-left: 2em;
-      margin-bottom: 0.5em;
-      font-size: 0.8em;
+      padding-left: 2.4em;
+      margin-bottom: 0.8em;
+      font-size: 0.95em;
+    }
+
+    .step-list li .highlight {
+      font-size: 1em;
     }
 
     /* Schedule */
     .schedule-grid {
-      grid-template-columns: 32px 1fr;
-      gap: 4px 8px;
-      font-size: 0.55em;
+      grid-template-columns: 36px 1fr;
+      gap: 5px 10px;
+      font-size: 0.85em;
     }
 
     .schedule-grid .day {
-      padding: 5px 4px;
-      font-size: 0.9em;
+      padding: 7px 4px;
     }
 
     .schedule-grid .activity {
-      padding: 5px 8px;
+      padding: 7px 10px;
     }
 
     .badge {
-      font-size: 0.55em;
-      padding: 1px 6px;
-      margin-left: 4px;
+      font-size: 0.7em;
+      padding: 2px 8px;
+      margin-left: 6px;
     }
 
     /* Service cards */
     .service-card {
-      padding: 12px;
-      margin-bottom: 8px;
+      padding: 14px;
+      margin-bottom: 10px;
     }
 
     .service-card .sv-name {
-      font-size: 0.64em;
+      font-size: 0.9em;
+    }
+
+    .service-card .sv-price {
+      font-size: 0.8em;
     }
 
     .service-card .sv-desc {
-      font-size: 0.5em;
+      font-size: 0.75em;
     }
 
     /* Income model */
     .income-model {
-      padding: 16px;
+      padding: 18px;
     }
 
     .income-row {
-      font-size: 0.65em;
-      padding: 8px 0;
-      flex-wrap: wrap;
-      gap: 2px;
+      font-size: 0.9em;
+      padding: 10px 0;
     }
 
     /* Mindset cards */
     .mindset-card {
-      padding: 14px;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .mindset-card .ms-icon .ic {
-      width: 40px;
-      height: 40px;
-    }
-
-    .mindset-card .ms-icon .ic svg {
-      width: 20px;
-      height: 20px;
+      padding: 16px;
+      gap: 14px;
+      margin-bottom: 12px;
     }
 
     .mindset-card .ms-title {
-      font-size: 0.65em;
+      font-size: 0.9em;
     }
 
     .mindset-card .ms-desc {
-      font-size: 0.52em;
+      font-size: 0.78em;
     }
 
     /* Future vision */
     .future-vision .big-number {
-      font-size: 2.2em;
+      font-size: 2.6em;
     }
 
     .future-vision .dream-list {
-      gap: 16px;
-      margin-top: 0.6em;
-    }
-
-    .ic.lg {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-    }
-
-    .ic.lg svg {
-      width: 24px;
-      height: 24px;
+      gap: 20px;
+      margin-top: 0.8em;
     }
 
     .future-vision .dream-item .dream-text {
-      font-size: 0.5em;
+      font-size: 0.75em;
     }
 
     /* Action boxes */
     .action-box {
-      padding: 14px 16px;
-      margin-bottom: 10px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
     }
 
-    .action-box .action-title {
+    .action-box .action-number {
       font-size: 0.7em;
     }
 
-    .action-box .action-detail {
-      font-size: 0.52em;
+    .action-box .action-title {
+      font-size: 0.95em;
     }
 
-    /* Icons */
+    .action-box .action-detail {
+      font-size: 0.78em;
+    }
+
+    /* Icons - keep readable */
     .ic {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
     }
 
     .ic svg {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
     }
 
     .ic.sm {
+      width: 30px;
+      height: 30px;
+    }
+
+    .ic.sm svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .ic.lg {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+    }
+
+    .ic.lg svg {
       width: 26px;
       height: 26px;
     }
 
-    .ic.sm svg {
-      width: 14px;
-      height: 14px;
-    }
-
     /* Formula */
     .formula {
-      font-size: 0.85em;
+      font-size: 1em;
     }
 
     .formula span {
-      padding: 3px 10px;
-      margin: 2px 3px;
+      padding: 4px 12px;
+      margin: 3px 4px;
     }
 
     .closing-message {
-      margin-top: 0.8em;
-      padding: 12px;
-      font-size: 0.6em;
+      margin-top: 1em;
+      padding: 16px;
+      font-size: 0.85em;
     }
 
     .closing-message .text-gradient {
-      font-size: 1.1em;
+      font-size: 1.15em;
     }
 
-    /* Two column sub-headers */
     .col-section h3 {
-      font-size: 0.65em;
-    }
-  }
-
-  /* Extra small screens */
-  @media screen and (max-width: 380px) {
-    .reveal {
-      font-size: 16px;
+      font-size: 0.9em;
     }
 
-    .reveal h1 {
-      font-size: 1.5em;
-    }
-
-    .future-vision .dream-list {
-      gap: 12px;
-    }
-
-    .ic.lg {
-      width: 40px;
-      height: 40px;
-    }
-
-    .ic.lg svg {
-      width: 20px;
-      height: 20px;
+    /* Fragment visibility in scroll view */
+    .fragment {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
     }
   }
 </style>
@@ -1378,20 +1377,25 @@
 
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script>
+var vw = window.innerWidth;
+var vh = window.innerHeight;
+var isMobile = vw <= 768;
+
 Reveal.initialize({
   hash: true,
-  slideNumber: true,
-  transition: 'slide',
+  slideNumber: !isMobile,
+  transition: isMobile ? 'none' : 'slide',
   transitionSpeed: 'default',
   backgroundTransition: 'fade',
   center: false,
-  width: 1100,
-  height: 700,
-  margin: 0.08,
-  minScale: 0.2,
+  width: isMobile ? vw : 1100,
+  height: isMobile ? vh : 700,
+  margin: isMobile ? 0.03 : 0.08,
+  minScale: isMobile ? 1.0 : 0.2,
   maxScale: 2.0,
   scrollActivationWidth: 768,
-  touch: true
+  touch: true,
+  disableLayout: isMobile
 }).then(function() {
   lucide.createIcons();
 });
