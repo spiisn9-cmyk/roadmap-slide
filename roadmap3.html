@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>月40万円ロードマップ ─ 心理学×SNSで在宅収入</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" media="(min-width: 769px)">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" media="(min-width: 769px)">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    --phase1: #7C6FE0;
+    --phase2: #4ECDC4;
+    --phase3: #FF8A80;
+    --phase4: #FFD54F;
+    --accent: #7C6FE0;
+    --bg-dark: #0b0b1e;
+  }
+
+  .reveal {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 28px;
+    color: #e0e0e0;
+  }
+
+  .reveal .slides { text-align: left; }
+
+  .reveal .slides section {
+    padding: 30px 40px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .reveal h1 {
+    font-size: 2.2em;
+    font-weight: 900;
+    background: linear-gradient(135deg, #7C6FE0, #4ECDC4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.3em;
+    text-align: center;
+  }
+
+  .reveal h2 {
+    font-size: 1.45em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    color: #ffffff;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.2em;
+    display: inline-block;
+  }
+
+  .reveal h3 {
+    font-size: 1.0em;
+    font-weight: 500;
+    color: #a0a0c0;
+    margin-bottom: 0.7em;
+  }
+
+  .reveal p, .reveal li {
+    font-size: 0.72em;
+    line-height: 1.7;
+    color: #c8c8e0;
+  }
+
+  .reveal ul { list-style: none; padding-left: 0; }
+
+  .reveal ul li {
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 0.4em;
+  }
+
+  .reveal ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  .slide-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }
+
+  .slide-title .subtitle {
+    font-size: 0.85em;
+    color: #a0a0c0;
+    margin-top: 0.5em;
+    font-weight: 300;
+  }
+
+  .slide-title .name-tag {
+    margin-top: 2em;
+    padding: 0.5em 1.5em;
+    border: 2px solid rgba(124,111,224,0.4);
+    border-radius: 50px;
+    font-size: 0.65em;
+    color: #9e94d4;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 0.5em;
+    width: 100%;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 12px;
+    transition: transform 0.3s;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .card:hover { transform: translateY(-2px); }
+
+  .card .card-title {
+    font-size: 0.68em;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.2em;
+  }
+
+  .card .card-desc {
+    font-size: 0.48em;
+    color: #a0a0c0;
+    line-height: 1.5;
+  }
+
+  .timeline {
+    position: relative;
+    margin-top: 0.8em;
+    padding-left: 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--phase1), var(--phase2), var(--phase3), var(--phase4));
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 0.8em;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    background: var(--bg-dark);
+  }
+
+  .timeline-item.phase1::before { border-color: var(--phase1); }
+  .timeline-item.phase2::before { border-color: var(--phase2); }
+  .timeline-item.phase3::before { border-color: var(--phase3); }
+  .timeline-item.phase4::before { border-color: var(--phase4); }
+
+  .timeline-item .tl-label {
+    font-size: 0.52em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.1em;
+  }
+
+  .timeline-item.phase1 .tl-label { color: var(--phase1); }
+  .timeline-item.phase2 .tl-label { color: var(--phase2); }
+  .timeline-item.phase3 .tl-label { color: var(--phase3); }
+  .timeline-item.phase4 .tl-label { color: var(--phase4); }
+
+  .timeline-item .tl-title {
+    font-size: 0.68em;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .timeline-item .tl-amount {
+    font-size: 0.55em;
+    color: #a0a0c0;
+  }
+
+  .phase-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.5em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.6em;
+  }
+
+  .phase-header.p1 { background: rgba(124,111,224,0.15); color: var(--phase1); }
+  .phase-header.p2 { background: rgba(78,205,196,0.15); color: var(--phase2); }
+  .phase-header.p3 { background: rgba(255,138,128,0.15); color: var(--phase3); }
+  .phase-header.p4 { background: rgba(255,213,79,0.15); color: var(--phase4); }
+
+  .step-list {
+    counter-reset: step;
+    padding-left: 0;
+  }
+
+  .step-list li {
+    counter-increment: step;
+    padding-left: 2.2em;
+    margin-bottom: 0.5em;
+    position: relative;
+  }
+
+  .step-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.65em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2px;
+  }
+
+  .step-list.purple li::before { background: var(--phase1); }
+  .step-list.green li::before { background: var(--phase2); }
+  .step-list.red li::before { background: var(--phase3); }
+  .step-list.yellow li::before { background: var(--phase4); }
+
+  .income-model {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 0.5em;
+    width: 100%;
+  }
+
+  .income-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.68em;
+  }
+
+  .income-row:last-child { border-bottom: none; }
+  .income-row .label { color: #c8c8e0; }
+  .income-row .amount { font-weight: 700; color: #ffffff; }
+
+  .income-row.total {
+    border-top: 2px solid var(--phase4);
+    margin-top: 8px;
+    padding-top: 12px;
+  }
+
+  .income-row.total .amount {
+    font-size: 1.2em;
+    background: linear-gradient(135deg, var(--phase1), var(--phase2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .mindset-card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.03);
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .mindset-card .ms-icon { font-size: 1.6em; flex-shrink: 0; }
+
+  .mindset-card .ms-title {
+    font-size: 0.68em;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.15em;
+  }
+
+  .mindset-card .ms-desc {
+    font-size: 0.52em;
+    color: #a0a0c0;
+    line-height: 1.6;
+  }
+
+  .future-vision { text-align: center; padding-top: 0.3em; }
+
+  .future-vision .big-number {
+    font-size: 2.6em;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--phase1), var(--phase2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .future-vision .dream-list {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 0.8em;
+    flex-wrap: wrap;
+  }
+
+  .future-vision .dream-item { text-align: center; }
+  .future-vision .dream-item .dream-icon { font-size: 2em; margin-bottom: 0.2em; }
+  .future-vision .dream-item .dream-text { font-size: 0.55em; color: #c8c8e0; }
+
+  .action-box {
+    background: linear-gradient(135deg, rgba(124,111,224,0.1), rgba(78,205,196,0.1));
+    border: 1px solid rgba(124,111,224,0.2);
+    border-radius: 16px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .action-box .action-number {
+    font-size: 0.5em;
+    font-weight: 700;
+    color: var(--phase1);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.15em;
+  }
+
+  .action-box .action-title {
+    font-size: 0.75em;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.15em;
+  }
+
+  .action-box .action-detail {
+    font-size: 0.52em;
+    color: #a0a0c0;
+    line-height: 1.6;
+  }
+
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 0.5em;
+    width: 100%;
+  }
+
+  .profile-item {
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .profile-item .pi-icon { font-size: 1em; }
+  .profile-item .pi-icon .ic { width: 40px; height: 40px; }
+  .profile-item .pi-icon .ic svg { width: 20px; height: 20px; }
+  .profile-item .pi-label { font-size: 0.48em; color: #8888aa; margin-bottom: 2px; }
+  .profile-item .pi-value { font-size: 0.62em; font-weight: 600; color: #ffffff; }
+
+  .goal-banner {
+    margin-top: 0.8em;
+    text-align: center;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(124,111,224,0.15), rgba(78,205,196,0.15));
+    border-radius: 16px;
+    border: 1px solid rgba(124,111,224,0.2);
+  }
+
+  .goal-banner .goal-text { font-size: 0.6em; color: #a0a0c0; }
+  .goal-banner .goal-amount { font-size: 1.4em; font-weight: 900; color: #ffffff; }
+  .goal-banner .goal-why { font-size: 0.55em; color: var(--phase2); margin-top: 0.2em; }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 0.5em;
+    width: 100%;
+  }
+
+  .two-col .col-section { min-width: 0; overflow: hidden; }
+
+  .col-section h3 {
+    font-size: 0.68em;
+    color: #ffffff;
+    margin-bottom: 0.3em;
+    font-weight: 700;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 8px;
+    border-left: 3px solid var(--phase1);
+    width: 100%;
+  }
+
+  .service-card .sv-name { font-size: 0.64em; font-weight: 700; color: #ffffff; }
+  .service-card .sv-price { font-size: 0.54em; color: var(--phase2); font-weight: 600; }
+  .service-card .sv-desc { font-size: 0.48em; color: #a0a0c0; margin-top: 3px; }
+
+  .formula {
+    text-align: center;
+    margin: 0.4em 0;
+    font-size: 0.88em;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .formula span {
+    padding: 4px 14px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 0 3px;
+  }
+
+  .formula .f-video { background: rgba(124,111,224,0.2); color: var(--phase1); }
+  .formula .f-ai { background: rgba(255,213,79,0.2); color: var(--phase4); }
+  .formula .f-action { background: rgba(255,138,128,0.2); color: var(--phase3); }
+  .formula .f-result { background: rgba(78,205,196,0.2); color: var(--phase2); }
+  .formula .f-op { color: #666; }
+
+  .closing-message {
+    text-align: center;
+    margin-top: 1em;
+    padding: 16px;
+    font-size: 0.65em;
+    color: #a0a0c0;
+    font-style: italic;
+  }
+
+  .reveal .slide-number {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .highlight { color: #ffffff; font-weight: 700; }
+
+  .ic {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+  }
+
+  .ic svg { width: 24px; height: 24px; stroke-width: 2; }
+
+  .ic.sm {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  .ic.sm svg { width: 16px; height: 16px; }
+
+  .ic.lg {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    margin-bottom: 0.3em;
+  }
+
+  .ic.lg svg { width: 28px; height: 28px; }
+
+  .ic.purple {
+    background: linear-gradient(135deg, rgba(124,111,224,0.2), rgba(124,111,224,0.08));
+    color: var(--phase1);
+    box-shadow: 0 0 20px rgba(124,111,224,0.1);
+  }
+
+  .ic.teal {
+    background: linear-gradient(135deg, rgba(78,205,196,0.2), rgba(78,205,196,0.08));
+    color: var(--phase2);
+    box-shadow: 0 0 20px rgba(78,205,196,0.1);
+  }
+
+  .ic.red {
+    background: linear-gradient(135deg, rgba(255,138,128,0.2), rgba(255,138,128,0.08));
+    color: var(--phase3);
+    box-shadow: 0 0 20px rgba(255,138,128,0.1);
+  }
+
+  .ic.gold {
+    background: linear-gradient(135deg, rgba(255,213,79,0.2), rgba(255,213,79,0.08));
+    color: var(--phase4);
+    box-shadow: 0 0 20px rgba(255,213,79,0.1);
+  }
+
+  .ic.white {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+    color: #c8c8e0;
+    box-shadow: 0 0 20px rgba(255,255,255,0.05);
+  }
+
+  .reveal h2 .ic { margin-right: 6px; transform: translateY(2px); }
+  .card .icon { font-size: 1em; margin-bottom: 0.2em; }
+  .card .icon .ic { width: 36px; height: 36px; }
+  .card .icon .ic svg { width: 18px; height: 18px; }
+  .mindset-card .ms-icon { font-size: 1em; }
+  .future-vision .dream-item .dream-icon { font-size: 1em; margin-bottom: 0.3em; }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #7C6FE0, #4ECDC4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  /* Niche card */
+  .niche-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .niche-card .nc-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .niche-card .nc-title {
+    font-size: 0.68em;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .niche-card .nc-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .niche-card .nc-tag {
+    font-size: 0.42em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(124,111,224,0.12);
+    color: #b0a8e8;
+    font-weight: 500;
+  }
+
+  .niche-card .nc-tag.hot {
+    background: rgba(255,138,128,0.15);
+    color: var(--phase3);
+  }
+
+  .niche-card .nc-tag.mint {
+    background: rgba(78,205,196,0.12);
+    color: var(--phase2);
+  }
+
+  /* Faceless strategy */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 0.5em;
+    width: 100%;
+  }
+
+  .strategy-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .strategy-card .sc-title {
+    font-size: 0.58em;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 0.3em;
+    margin-bottom: 0.15em;
+  }
+
+  .strategy-card .sc-desc {
+    font-size: 0.42em;
+    color: #a0a0c0;
+    line-height: 1.5;
+  }
+
+  /* Tool cards */
+  .tool-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 0.5em;
+    width: 100%;
+  }
+
+  .tool-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .tool-card .tc-name {
+    font-size: 0.6em;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 0.3em;
+    margin-bottom: 0.15em;
+  }
+
+  .tool-card .tc-desc {
+    font-size: 0.42em;
+    color: #a0a0c0;
+    line-height: 1.5;
+  }
+
+  .tool-card .tc-tag {
+    display: inline-block;
+    font-size: 0.38em;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+
+  .tool-card .tc-tag.free { background: rgba(78,205,196,0.15); color: var(--phase2); }
+
+  /* ===== Mobile ===== */
+  @media screen and (max-width: 768px) {
+    html, body {
+      background: #0b0b1e;
+      overflow-y: auto;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .reveal, .slides {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+
+    section {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+      padding: 32px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #e0e0e0;
+      font-size: 16px;
+    }
+
+    .fragment {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+
+    .reveal .controls,
+    .reveal .progress,
+    .reveal .slide-number,
+    .reveal .backgrounds {
+      display: none;
+    }
+
+    h1 {
+      font-size: 1.9em;
+      font-weight: 900;
+      background: linear-gradient(135deg, #7C6FE0, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 0.3em;
+    }
+
+    h2 {
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #fff;
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 0.2em;
+      display: inline-block;
+      margin-bottom: 0.5em;
+    }
+
+    h3 { font-size: 0.92em; font-weight: 500; color: #a0a0c0; margin-bottom: 0.5em; }
+
+    p, li { font-size: 0.9em; line-height: 1.7; color: #c8c8e0; }
+
+    ul { list-style: none; padding-left: 0; }
+    ul li { padding-left: 1.5em; position: relative; margin-bottom: 0.4em; }
+    ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+    .slide-title { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 48px 0; }
+    .slide-title .subtitle { font-size: 0.92em; color: #a0a0c0; margin-top: 0.5em; }
+    .slide-title .name-tag { margin-top: 1.5em; font-size: 0.75em; padding: 0.4em 1.2em; border: 2px solid rgba(124,111,224,0.4); border-radius: 50px; color: #9e94d4; }
+
+    .card-grid, .profile-grid, .two-col, .tool-grid, .strategy-grid {
+      display: grid; grid-template-columns: 1fr; gap: 12px; width: 100%;
+    }
+
+    .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 16px; }
+    .card .card-title { font-size: 0.95em; font-weight: 700; color: #fff; margin-bottom: 0.2em; }
+    .card .card-desc { font-size: 0.82em; color: #a0a0c0; line-height: 1.6; }
+
+    .profile-item { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
+    .profile-item .pi-label { font-size: 0.7em; color: #8888aa; margin-bottom: 2px; }
+    .profile-item .pi-value { font-size: 0.9em; font-weight: 600; color: #fff; }
+
+    .goal-banner { margin-top: 1em; text-align: center; padding: 20px; background: linear-gradient(135deg, rgba(124,111,224,0.15), rgba(78,205,196,0.15)); border-radius: 16px; border: 1px solid rgba(124,111,224,0.2); }
+    .goal-banner .goal-text { font-size: 0.85em; color: #a0a0c0; }
+    .goal-banner .goal-amount { font-size: 1.5em; font-weight: 900; color: #fff; }
+    .goal-banner .goal-why { font-size: 0.8em; color: var(--phase2); margin-top: 0.3em; }
+
+    .timeline { position: relative; margin-top: 0.8em; padding-left: 0; }
+    .timeline::before { content: ''; position: absolute; left: 14px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--phase1), var(--phase2), var(--phase3), var(--phase4)); border-radius: 2px; }
+    .timeline-item { position: relative; padding-left: 44px; margin-bottom: 1em; }
+    .timeline-item::before { content: ''; position: absolute; left: 6px; top: 4px; width: 18px; height: 18px; border-radius: 50%; border: 3px solid var(--accent); background: #0b0b1e; }
+    .timeline-item.phase1::before { border-color: var(--phase1); }
+    .timeline-item.phase2::before { border-color: var(--phase2); }
+    .timeline-item.phase3::before { border-color: var(--phase3); }
+    .timeline-item.phase4::before { border-color: var(--phase4); }
+    .timeline-item .tl-label { font-size: 0.72em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.1em; }
+    .timeline-item.phase1 .tl-label { color: var(--phase1); }
+    .timeline-item.phase2 .tl-label { color: var(--phase2); }
+    .timeline-item.phase3 .tl-label { color: var(--phase3); }
+    .timeline-item.phase4 .tl-label { color: var(--phase4); }
+    .timeline-item .tl-title { font-size: 0.95em; font-weight: 700; color: #fff; }
+    .timeline-item .tl-amount { font-size: 0.8em; color: #a0a0c0; }
+
+    .phase-header { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 50px; font-size: 0.7em; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.5em; }
+
+    .step-list { counter-reset: step; padding-left: 0; list-style: none; }
+    .step-list li { counter-increment: step; padding-left: 2.2em; margin-bottom: 0.8em; position: relative; font-size: 0.9em; }
+    .step-list li::before { content: counter(step); position: absolute; left: 0; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.65em; font-weight: 700; display: flex; align-items: center; justify-content: center; top: 2px; }
+    .step-list.purple li::before { background: var(--phase1); }
+    .step-list.green li::before { background: var(--phase2); }
+    .step-list.red li::before { background: var(--phase3); }
+
+    .service-card { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 14px; margin-bottom: 10px; border-left: 3px solid var(--phase1); width: 100%; }
+    .service-card .sv-name { font-size: 0.9em; font-weight: 700; color: #fff; }
+    .service-card .sv-price { font-size: 0.8em; color: var(--phase2); font-weight: 600; }
+    .service-card .sv-desc { font-size: 0.75em; color: #a0a0c0; margin-top: 4px; }
+
+    .income-model { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 18px; width: 100%; }
+    .income-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.88em; }
+    .income-row:last-child { border-bottom: none; }
+    .income-row .label { color: #c8c8e0; }
+    .income-row .amount { font-weight: 700; color: #fff; }
+    .income-row.total { border-top: 2px solid var(--phase4); margin-top: 8px; padding-top: 14px; }
+
+    .mindset-card { display: flex; gap: 14px; align-items: flex-start; background: rgba(255,255,255,0.03); border-radius: 16px; padding: 16px; margin-bottom: 12px; width: 100%; }
+    .mindset-card .ms-title { font-size: 0.9em; font-weight: 700; color: #fff; margin-bottom: 0.2em; }
+    .mindset-card .ms-desc { font-size: 0.78em; color: #a0a0c0; line-height: 1.6; }
+
+    .future-vision { text-align: center; }
+    .future-vision .big-number { font-size: 2em; }
+    .future-vision .dream-list { display: flex; justify-content: center; gap: 16px; margin-top: 0.8em; flex-wrap: wrap; }
+    .future-vision .dream-item .dream-text { font-size: 0.72em; color: #c8c8e0; }
+
+    .action-box { background: linear-gradient(135deg, rgba(124,111,224,0.1), rgba(78,205,196,0.1)); border: 1px solid rgba(124,111,224,0.2); border-radius: 16px; padding: 16px 18px; margin-bottom: 12px; width: 100%; }
+    .action-box .action-number { font-size: 0.7em; font-weight: 700; color: var(--phase1); letter-spacing: 0.1em; margin-bottom: 0.2em; }
+    .action-box .action-title { font-size: 0.95em; font-weight: 700; color: #fff; margin-bottom: 0.2em; }
+    .action-box .action-detail { font-size: 0.78em; color: #a0a0c0; line-height: 1.6; }
+
+    .formula { text-align: center; margin: 0.6em 0; font-size: 0.92em; font-weight: 700; color: #fff; }
+    .formula span { padding: 4px 10px; border-radius: 8px; display: inline-block; margin: 3px 3px; }
+
+    .closing-message { text-align: center; margin-top: 1em; padding: 16px; font-size: 0.85em; color: #a0a0c0; font-style: italic; }
+    .ic.lg { width: 50px; height: 50px; border-radius: 14px; }
+    .ic.lg svg { width: 25px; height: 25px; }
+
+    .niche-card { padding: 16px; }
+    .niche-card .nc-title { font-size: 0.9em; }
+    .niche-card .nc-tag { font-size: 0.7em; padding: 4px 12px; }
+
+    .strategy-card { padding: 16px; }
+    .strategy-card .sc-title { font-size: 0.9em; }
+    .strategy-card .sc-desc { font-size: 0.78em; }
+
+    .tool-card { padding: 14px; }
+    .tool-card .tc-name { font-size: 0.9em; }
+    .tool-card .tc-desc { font-size: 0.75em; }
+    .tool-card .tc-tag { font-size: 0.65em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ========== Slide 1: 表紙 ========== -->
+<section>
+  <div class="slide-title">
+    <h1>心理学 × SNSで<br>在宅月40万円</h1>
+    <div class="subtitle">顔出しなし × あなたの「学ぶ力」を武器にする<br>12ヶ月ロードマップ</div>
+    <div class="name-tag">Your Personal Roadmap</div>
+  </div>
+</section>
+
+<!-- ========== Slide 2: 現在地の確認 ========== -->
+<section>
+  <h2><span class="ic sm purple"><i data-lucide="map-pin"></i></span> 現在地の確認</h2>
+
+  <div class="profile-grid">
+    <div class="profile-item">
+      <div class="pi-icon"><span class="ic purple"><i data-lucide="graduation-cap"></i></span></div>
+      <div>
+        <div class="pi-label">大学生</div>
+        <div class="pi-value">教育学・心理学 専攻</div>
+      </div>
+    </div>
+    <div class="profile-item">
+      <div class="pi-icon"><span class="ic teal"><i data-lucide="book-open"></i></span></div>
+      <div>
+        <div class="pi-label">学ぶことが好き</div>
+        <div class="pi-value">受験も論文読むのも楽しい</div>
+      </div>
+    </div>
+    <div class="profile-item">
+      <div class="pi-icon"><span class="ic red"><i data-lucide="heart-pulse"></i></span></div>
+      <div>
+        <div class="pi-label">4月に病気診断</div>
+        <div class="pi-value">在宅中心・体調に波がある</div>
+      </div>
+    </div>
+    <div class="profile-item">
+      <div class="pi-icon"><span class="ic gold"><i data-lucide="wallet"></i></span></div>
+      <div>
+        <div class="pi-label">現在の収入源</div>
+        <div class="pi-value">塾 + 飲食 + 仕送り（月10万自由）</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="goal-banner fragment">
+    <div class="goal-text">目標</div>
+    <div class="goal-amount">月 <span class="text-gradient">40万円</span></div>
+    <div class="goal-why">在宅で自立して、安定した収入で「自分らしい幸せな生活」を手に入れる</div>
+  </div>
+</section>
+
+<!-- ========== Slide 3: あなたの武器 ========== -->
+<section>
+  <h2><span class="ic sm gold"><i data-lucide="swords"></i></span> あなたの武器</h2>
+  <h3>「弱み」だと思っていることが、実は全部「強み」</h3>
+
+  <div class="card-grid">
+    <div class="card fragment">
+      <div class="icon"><span class="ic purple"><i data-lucide="brain"></i></span></div>
+      <div class="card-title">心理学 × 教育学の専門知識</div>
+      <div class="card-desc">SNSで最も求められているのは「人の心を動かすコンテンツ」。心理学を専攻しているあなたは、それを学問として理解している</div>
+    </div>
+    <div class="card fragment">
+      <div class="icon"><span class="ic teal"><i data-lucide="flame"></i></span></div>
+      <div class="card-title">「学ぶこと自体が好き」という才能</div>
+      <div class="card-desc">受験も論文も楽しめる人は100人に1人。この「学習力」はSNSで一生使える最強スキル。トレンドもアルゴリズムも学べば攻略できる</div>
+    </div>
+    <div class="card fragment">
+      <div class="icon"><span class="ic red"><i data-lucide="home"></i></span></div>
+      <div class="card-title">在宅 ＝ SNS事業と最高の相性</div>
+      <div class="card-desc">SNS運用は完全在宅でできる仕事。通勤不要・対面不要・自分のペースで作業可能。体調に合わせて働ける理想の働き方</div>
+    </div>
+    <div class="card fragment">
+      <div class="icon"><span class="ic gold"><i data-lucide="sparkles"></i></span></div>
+      <div class="card-title">ロールモデルがいる</div>
+      <div class="card-desc">「病気があっても稼いでいるインフルエンサー」の存在を知っている。道があることを知っているのは、それだけで大きなアドバンテージ</div>
+    </div>
+  </div>
+
+  <div class="formula fragment" style="margin-top: 0.5em;">
+    <span class="f-video">心理学の知識</span>
+    <span class="f-op">×</span>
+    <span class="f-result">学ぶ力</span>
+    <span class="f-op">×</span>
+    <span class="f-ai">SNS</span>
+    <span class="f-op">＝</span>
+    <span class="f-action">在宅で月40万円</span>
+  </div>
+</section>
+
+<!-- ========== Slide 4: 顔出しなしSNS戦略 ========== -->
+<section>
+  <h2><span class="ic sm teal"><i data-lucide="eye-off"></i></span> 顔出しなしでも稼げるSNS戦略</h2>
+  <h3>顔を出さなくても、バズるアカウントは作れる</h3>
+
+  <div class="strategy-grid">
+    <div class="strategy-card fragment">
+      <span class="ic sm purple"><i data-lucide="type"></i></span>
+      <div class="sc-title">テキスト系リール</div>
+      <div class="sc-desc">心理学の豆知識をテキストスライドで発信。文字 + BGMだけで数万再生を狙える。顔出し一切不要</div>
+    </div>
+    <div class="strategy-card fragment">
+      <span class="ic sm teal"><i data-lucide="mic"></i></span>
+      <div class="sc-title">ナレーション解説</div>
+      <div class="sc-desc">声だけで心理学を解説。顔は出さず、画面にはイラストやテキストを表示。TikTokで人気の形式</div>
+    </div>
+    <div class="strategy-card fragment">
+      <span class="ic sm gold"><i data-lucide="image"></i></span>
+      <div class="sc-title">カルーセル投稿</div>
+      <div class="sc-desc">Instagramで最もリーチが伸びる形式。心理学テクニックを10枚のスライドにまとめるだけ。保存率が高い</div>
+    </div>
+  </div>
+
+  <div class="fragment" style="margin-top:0.6em; text-align:center;">
+    <p style="font-size:0.55em; color:var(--phase2); font-weight:600;">
+      実は今、SNSで最も伸びているのは「顔出しなし × 知識系」アカウント。<br>
+      あなたの「心理学 × 教育」は、まさにそのど真ん中。
+    </p>
+  </div>
+</section>
+
+<!-- ========== Slide 5: コンテンツジャンル ========== -->
+<section>
+  <h2><span class="ic sm red"><i data-lucide="lightbulb"></i></span> 心理学 × 教育 ＝ 最強コンテンツ</h2>
+  <h3>あなたの学んでいることが、そのまま「人を惹きつけるコンテンツ」になる</h3>
+
+  <div class="niche-card fragment">
+    <div class="nc-header">
+      <span class="ic sm purple"><i data-lucide="brain"></i></span>
+      <div class="nc-title">恋愛心理学・対人心理</div>
+    </div>
+    <div class="nc-examples">
+      <span class="nc-tag hot">好きな人の脈アリサイン5選</span>
+      <span class="nc-tag hot">モテる人が無意識にやっていること</span>
+      <span class="nc-tag">嫌われる話し方の共通点</span>
+    </div>
+  </div>
+
+  <div class="niche-card fragment">
+    <div class="nc-header">
+      <span class="ic sm teal"><i data-lucide="book-open"></i></span>
+      <div class="nc-title">勉強法・自己成長</div>
+    </div>
+    <div class="nc-examples">
+      <span class="nc-tag mint">科学的に正しい暗記法</span>
+      <span class="nc-tag mint">集中力を2倍にする方法</span>
+      <span class="nc-tag">やる気が出ないときの対処法</span>
+    </div>
+  </div>
+
+  <div class="niche-card fragment">
+    <div class="nc-header">
+      <span class="ic sm gold"><i data-lucide="heart"></i></span>
+      <div class="nc-title">メンタルヘルス・自己肯定感</div>
+    </div>
+    <div class="nc-examples">
+      <span class="nc-tag hot">自己肯定感を上げる3つの習慣</span>
+      <span class="nc-tag">HSPの人が楽になる考え方</span>
+      <span class="nc-tag mint">不安を消す心理テクニック</span>
+    </div>
+  </div>
+
+  <div class="fragment" style="text-align:center; margin-top:0.4em;">
+    <p style="font-size:0.5em; color:#a0a0c0;">
+      どのジャンルもSNSで<span class="highlight">保存・シェアされやすい</span>テーマ。バズの種はあなたの教科書の中にある
+    </p>
+  </div>
+</section>
+
+<!-- ========== Slide 6: 12ヶ月ロードマップ ========== -->
+<section>
+  <h2><span class="ic sm teal"><i data-lucide="route"></i></span> 12ヶ月ロードマップ</h2>
+
+  <div class="timeline">
+    <div class="timeline-item phase1 fragment">
+      <div class="tl-label">Phase 1 ─ Month 1-2</div>
+      <div class="tl-title">SNS基盤構築 × コンテンツの型作り</div>
+      <div class="tl-amount">アカウント設計・投稿の型を固める / フォロワー0→500</div>
+    </div>
+    <div class="timeline-item phase2 fragment">
+      <div class="tl-label">Phase 2 ─ Month 3-5</div>
+      <div class="tl-title">発信量産 × フォロワー獲得</div>
+      <div class="tl-amount">毎日投稿 × バズを狙う / フォロワー500→5,000</div>
+    </div>
+    <div class="timeline-item phase3 fragment">
+      <div class="tl-label">Phase 3 ─ Month 6-9</div>
+      <div class="tl-title">収益化 × 複数の収入源構築</div>
+      <div class="tl-amount">アフィリ・PR案件・デジタル商品 / 月10〜20万円</div>
+    </div>
+    <div class="timeline-item phase4 fragment">
+      <div class="tl-label">Phase 4 ─ Month 10-12</div>
+      <div class="tl-title">事業化 × 月40万円達成</div>
+      <div class="tl-amount">自分のブランドを確立 / 安定収入の仕組み化</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Slide 7: Phase 1 ========== -->
+<section>
+  <div class="phase-header p1">PHASE 1 ─ MONTH 1-2</div>
+  <h2><span class="ic sm purple"><i data-lucide="layout-template"></i></span> SNS基盤構築 × コンテンツの型作り</h2>
+  <h3>まずは「投稿できる状態」を作ることがゴール</h3>
+
+  <ol class="step-list purple">
+    <li class="fragment">
+      <span class="highlight">アカウントのコンセプトを決める</span><br>
+      <span style="font-size:0.85em; color:#a0a0c0;">「誰に・何を・どんなトーンで」を1文にまとめる。例：「20代女性に、心理学で恋愛と自信をサポート」</span>
+    </li>
+    <li class="fragment">
+      <span class="highlight">プロフィール・ハイライトを整える</span><br>
+      <span style="font-size:0.85em; color:#a0a0c0;">「何のアカウントか」が3秒で伝わるプロフを作成。Canvaでアイコンとハイライトカバーも統一</span>
+    </li>
+    <li class="fragment">
+      <span class="highlight">投稿テンプレートを3パターン用意</span><br>
+      <span style="font-size:0.85em; color:#a0a0c0;">①リスト型（○選）②解説型（なぜ○○なのか）③共感型（○○な人あるある）。この3つで回す</span>
+    </li>
+    <li class="fragment">
+      <span class="highlight">まず30投稿を出す（完璧は不要）</span><br>
+      <span style="font-size:0.85em; color:#a0a0c0;">最初は練習。60点でOK。「投稿する習慣」を体に染み込ませることが最大の成果</span>
+    </li>
+  </ol>
+</section>
+
+<!-- ========== Slide 8: Phase 2 ========== -->
+<section>
+  <div class="phase-header p2">PHASE 2 ─ MONTH 3-5</div>
+  <h2><span class="ic sm teal"><i data-lucide="trending-up"></i></span> 発信量産 × フォロワー獲得</h2>
+
+  <div class="two-col">
+    <div class="col-section">
+      <h3><span class="ic sm red"><i data-lucide="zap"></i></span> コンテンツ量産</h3>
+      <ul class="fragment">
+        <li>毎日1投稿を習慣化（リール or カルーセル）</li>
+        <li>AIを使って台本・スライドを時短作成</li>
+        <li>伸びた投稿の「なぜ伸びたか」を分析</li>
+        <li>トレンド × 心理学のかけ算ネタを狙う</li>
+      </ul>
+    </div>
+    <div class="col-section">
+      <h3><span class="ic sm gold"><i data-lucide="users"></i></span> フォロワー獲得戦略</h3>
+      <ol class="step-list green fragment">
+        <li><span class="highlight">リール × TikTokの同時投稿</span><br>
+          <span style="font-size:0.85em; color:#a0a0c0;">1つのコンテンツを2プラットフォームに展開</span></li>
+        <li><span class="highlight">保存率を意識した構成</span><br>
+          <span style="font-size:0.85em; color:#a0a0c0;">「あとで見返したい」と思わせる情報量を意識</span></li>
+        <li><span class="highlight">コメント返信でファン化</span><br>
+          <span style="font-size:0.85em; color:#a0a0c0;">心理学の知識で的確な回答 → 信頼が生まれる</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Slide 9: Phase 3 ========== -->
+<section>
+  <div class="phase-header p3">PHASE 3 ─ MONTH 6-9</div>
+  <h2><span class="ic sm red"><i data-lucide="coins"></i></span> 収益化 × 複数の収入源構築</h2>
+  <h3>フォロワーが集まったら「価値を届けてお金に変える」</h3>
+
+  <div class="service-card fragment">
+    <div class="sv-name"><i data-lucide="link" style="width:14px;height:14px;display:inline;vertical-align:-2px;color:var(--phase1);margin-right:4px;"></i> アフィリエイト（本・アプリ・サービス紹介）</div>
+    <div class="sv-price">月5〜15万円</div>
+    <div class="sv-desc">心理学のおすすめ本、メンタルヘルスアプリ、オンライン学習サービスなどをストーリーズや投稿で紹介。読者の悩みに合った商品を「処方」する感覚</div>
+  </div>
+
+  <div class="service-card fragment" style="border-left-color: var(--phase2);">
+    <div class="sv-name"><i data-lucide="megaphone" style="width:14px;height:14px;display:inline;vertical-align:-2px;color:var(--phase2);margin-right:4px;"></i> PR案件・企業タイアップ</div>
+    <div class="sv-price">月5〜15万円</div>
+    <div class="sv-desc">フォロワー5,000人を超えると企業からPR依頼が届き始める。心理学系のアプリ・書籍・講座との相性が抜群</div>
+  </div>
+
+  <div class="service-card fragment" style="border-left-color: var(--phase4);">
+    <div class="sv-name"><i data-lucide="file-text" style="width:14px;height:14px;display:inline;vertical-align:-2px;color:var(--phase4);margin-right:4px;"></i> デジタル商品（PDF・テンプレート）</div>
+    <div class="sv-price">月5〜10万円</div>
+    <div class="sv-desc">「自己肯定感ワークブック」「勉強効率化テンプレート」など、心理学の知識をPDFにまとめて販売。一度作れば在庫ゼロで何度も売れる</div>
+  </div>
+</section>
+
+<!-- ========== Slide 10: 月40万円達成モデル ========== -->
+<section>
+  <div class="phase-header p4">PHASE 4 ─ MONTH 10-12</div>
+  <h2><span class="ic sm gold"><i data-lucide="trophy"></i></span> 月40万円 達成モデル</h2>
+
+  <div class="income-model">
+    <div class="income-row fragment">
+      <div class="label"><i data-lucide="link" style="width:14px;height:14px;display:inline;vertical-align:-2px;color:var(--phase1);margin-right:6px;"></i>アフィリエイト（本・アプリ・サービス）</div>
+      <div class="amount">8〜15万円 / 月</div>
+    </div>
+    <div class="income-row fragment">
+      <div class="label"><i data-lucide="megaphone" style="width:14px;height:14px;display:inline;vertical-align:-2px;color:var(--phase2);margin-right:6px;"></i>PR案件・企業タイアップ</div>
+      <div class="amount">10〜15万円 / 月</div>
+    </div>
+    <div class="income-row fragment">
+      <div class="label"><i data-lucide="file-text" style="width:14px;height:14px;display:inline;vertical-align:-2px;color:var(--phase3);margin-right:6px;"></i>デジタル商品（PDF・講座）</div>
+      <div class="amount">10〜15万円 / 月</div>
+    </div>
+    <div class="income-row fragment">
+      <div class="label"><i data-lucide="message-circle" style="width:14px;height:14px;display:inline;vertical-align:-2px;color:var(--phase4);margin-right:6px;"></i>オンライン相談・コーチング</div>
+      <div class="amount">5〜10万円 / 月</div>
+    </div>
+    <div class="income-row total fragment">
+      <div class="label" style="font-weight:700;">合計</div>
+      <div class="amount">月 40万円+</div>
+    </div>
+  </div>
+
+  <div class="fragment" style="margin-top: 0.5em; text-align: center;">
+    <p style="font-size: 0.55em; color: #a0a0c0;">
+      すべて<span class="highlight">在宅・顔出しなし</span>で完結。<br>
+      体調の波に合わせて、自分のペースで積み上げていける収入モデル
+    </p>
+  </div>
+</section>
+
+<!-- ========== Slide 11: おすすめツール紹介 ========== -->
+<section>
+  <h2><span class="ic sm purple"><i data-lucide="wrench"></i></span> おすすめツール紹介</h2>
+  <h3>全部無料（or 無料プランあり）で始められる</h3>
+
+  <p style="font-size:0.52em; color:var(--phase1); font-weight:700; margin-bottom:0.3em;">▼ コンテンツ作成ツール</p>
+  <div class="tool-grid fragment">
+    <div class="tool-card">
+      <span class="ic sm red"><i data-lucide="palette"></i></span>
+      <div class="tc-name">Canva</div>
+      <div class="tc-desc">カルーセル・リール・ストーリーズの作成。テンプレートが豊富で初心者でもおしゃれに</div>
+      <div class="tc-tag free">無料で使える</div>
+    </div>
+    <div class="tool-card">
+      <span class="ic sm gold"><i data-lucide="message-square"></i></span>
+      <div class="tc-name">ChatGPT / Claude</div>
+      <div class="tc-desc">投稿文・台本・キャプション・ハッシュタグをAIで生成。ネタ出しにも最強</div>
+      <div class="tc-tag free">無料プランあり</div>
+    </div>
+    <div class="tool-card">
+      <span class="ic sm teal"><i data-lucide="captions"></i></span>
+      <div class="tc-name">CapCut</div>
+      <div class="tc-desc">リール動画の編集。自動字幕・エフェクト・BGM追加がスマホだけで完結</div>
+      <div class="tc-tag free">完全無料</div>
+    </div>
+  </div>
+
+  <p style="font-size:0.52em; color:var(--phase2); font-weight:700; margin-top:0.6em; margin-bottom:0.3em;">▼ 分析・効率化ツール</p>
+  <div class="tool-grid fragment">
+    <div class="tool-card">
+      <span class="ic sm purple"><i data-lucide="bar-chart-3"></i></span>
+      <div class="tc-name">Instagramインサイト</div>
+      <div class="tc-desc">リーチ・保存数・フォロワー増減を分析。「何が伸びたか」をデータで把握</div>
+      <div class="tc-tag free">無料（ビジネスアカウント）</div>
+    </div>
+    <div class="tool-card">
+      <span class="ic sm gold"><i data-lucide="calendar"></i></span>
+      <div class="tc-name">Notion</div>
+      <div class="tc-desc">投稿ネタ管理・スケジュール管理・学んだことのメモを一元化</div>
+      <div class="tc-tag free">無料プランあり</div>
+    </div>
+    <div class="tool-card">
+      <span class="ic sm teal"><i data-lucide="link"></i></span>
+      <div class="tc-name">Lit.link / Linktree</div>
+      <div class="tc-desc">プロフィールのリンクまとめ。アフィリリンク・商品ページを1つのURLに</div>
+      <div class="tc-tag free">無料で使える</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Slide 12: マインドセット ========== -->
+<section>
+  <h2><span class="ic sm teal"><i data-lucide="shield"></i></span> あなたへのメッセージ</h2>
+
+  <div class="mindset-card fragment">
+    <div class="ms-icon"><span class="ic red"><i data-lucide="heart"></i></span></div>
+    <div>
+      <div class="ms-title">「病気だから無理」ではなく「在宅だからこそ最適」</div>
+      <div class="ms-desc">外に出なくても、人と会わなくても、SNSは価値を届けられる場所。あなたの状況は「制限」ではなく、在宅ビジネスとの「最高の相性」。</div>
+    </div>
+  </div>
+
+  <div class="mindset-card fragment">
+    <div class="ms-icon"><span class="ic purple"><i data-lucide="sparkles"></i></span></div>
+    <div>
+      <div class="ms-title">「自己肯定感を上げたい」なら、発信することが最短ルート</div>
+      <div class="ms-desc">フォロワーから「救われました」のコメントが届いたとき、自分が誰かの役に立っていると実感できる。それが一番の自己肯定感。</div>
+    </div>
+  </div>
+
+  <div class="mindset-card fragment">
+    <div class="ms-icon"><span class="ic gold"><i data-lucide="target"></i></span></div>
+    <div>
+      <div class="ms-title">体調が悪い日は休む。それでも「仕組み」は稼いでくれる</div>
+      <div class="ms-desc">SNSの投稿は、一度出したら消えない。寝ている間もアルゴリズムが拡散してくれる。頑張った日の成果が、休む日のあなたを支えてくれる。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Slide 13: 未来ビジョン ========== -->
+<section>
+  <h2 style="text-align:center; display:block;"><span class="ic sm gold"><i data-lucide="sun"></i></span> この先に待つ未来</h2>
+
+  <div class="future-vision">
+    <p style="font-size: 0.6em; color: #a0a0c0;">月40万円 × 在宅 × 自分のペースを達成した先には…</p>
+    <div class="big-number fragment">自分で選べる人生</div>
+    <p class="fragment" style="font-size: 0.55em; color: #c8c8e0;">誰かに依存しない、自分の力で生きていける安心感</p>
+
+    <div class="dream-list fragment">
+      <div class="dream-item">
+        <div class="dream-icon"><span class="ic lg purple"><i data-lucide="home"></i></span></div>
+        <div class="dream-text">在宅で安定収入</div>
+      </div>
+      <div class="dream-item">
+        <div class="dream-icon"><span class="ic lg teal"><i data-lucide="heart-handshake"></i></span></div>
+        <div class="dream-text">人の心を助ける仕事</div>
+      </div>
+      <div class="dream-item">
+        <div class="dream-icon"><span class="ic lg red"><i data-lucide="battery-charging"></i></span></div>
+        <div class="dream-text">体調に合わせて働く</div>
+      </div>
+      <div class="dream-item">
+        <div class="dream-icon"><span class="ic lg gold"><i data-lucide="smile"></i></span></div>
+        <div class="dream-text">自己肯定感が上がる</div>
+      </div>
+    </div>
+
+    <p class="fragment" style="font-size: 0.55em; color: var(--phase2); margin-top: 0.8em;">
+      「教育の力でより良い世界を作りたい」——<br>
+      中学の頃のあの想いを、SNSという形で実現できる。
+    </p>
+  </div>
+</section>
+
+<!-- ========== Slide 14: 今日からやる3つのこと ========== -->
+<section>
+  <h2><span class="ic sm teal"><i data-lucide="circle-check-big"></i></span> 今日からやる3つのこと</h2>
+  <h3>やることが明確になったら、1歩踏み出すだけ</h3>
+
+  <div class="action-box fragment">
+    <div class="action-number">Action 1 ─ 今日中</div>
+    <div class="action-title">Instagramのビジネスアカウントを作る</div>
+    <div class="action-detail">アカウント名・プロフィール文・アイコンを設定。コンセプトは「心理学で人生をラクにするアカウント」でOK。完璧じゃなくていい、まずは作る</div>
+  </div>
+
+  <div class="action-box fragment">
+    <div class="action-number">Action 2 ─ 今週中</div>
+    <div class="action-title">Canvaで最初の投稿を3つ作って投稿する</div>
+    <div class="action-detail">テーマ例：「自己肯定感を上げる3つの習慣」「やる気が出ない日の過ごし方」「好かれる人の共通点」。テンプレートを使えば30分で1投稿できる</div>
+  </div>
+
+  <div class="action-box fragment">
+    <div class="action-number">Action 3 ─ 1週間後</div>
+    <div class="action-title">AIを使ってネタを30個リストアップする</div>
+    <div class="action-detail">ChatGPTに「心理学を使ったInstagramの投稿ネタを30個出して。20代女性向け、保存されやすいテーマで」と入力。1ヶ月分のネタが5分で完成する</div>
+  </div>
+
+  <div class="closing-message fragment">
+    「教育の力でより良い世界を作りたい」——<br>
+    その想いは、SNSを通じて何万人にも届けられる。<br>
+    <span class="text-gradient" style="font-style: normal; font-size: 1.15em;">あなたの知識は、誰かの人生を変える力がある。</span>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script>
+(function() {
+  var isMobile = window.innerWidth <= 768;
+  if (isMobile) {
+    lucide.createIcons();
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js';
+    s.onload = function() {
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        transition: 'slide',
+        transitionSpeed: 'default',
+        backgroundTransition: 'fade',
+        center: false,
+        width: 1100,
+        height: 700,
+        margin: 0.08,
+        minScale: 0.2,
+        maxScale: 2.0,
+        touch: true
+      }).then(function() {
+        lucide.createIcons();
+      });
+    };
+    document.body.appendChild(s);
+  }
+})();
+</script>
+</body>
+</html>
